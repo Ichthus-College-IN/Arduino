@@ -4,15 +4,15 @@
 
 * [Arduino IDE](#arduino-ide)
     * [Verbinden met de Arduino](#verbinden-met-de-arduino)
-    * [De seriële monitor](#de-seriele-monitor)
+    * [De seriële monitor](#de-seriële-monitor)
 * [De Arduino programmeren](#de-arduino-programmeren)
     * [#include<>](#include)
     * [Variabelen en objecten](#variabelen-en-objecten)
-    * [void setup()](#void-setup)
-    * [void loop()](#void-loop)
+    * [void setup()](#void-setup())
+    * [void loop()](#void-loop())
     * [Een compleet script](#een-compleet-script)
 * [Een knipperend lampje](#een-knipperend-lampje)
-
+* [Overzicht: operators](#overzicht-operators)
 ---
 
 Arduino is hét startersplatform om met elektronica aan de gang te gaan. Het is
@@ -109,7 +109,7 @@ De naam `lcd` is hier de naam van het object, van het type `LiquidCrystal_I2C`.
 hoe je comments maakt in C++: met twee slashes `//` (in tegenstelling tot de `#`
 in Python).
 
-### void setup() {}
+### void setup()
 
 Op het moment dat de Arduino stroom krijgt of opnieuw opstart, worden de variabelen
 en objecten in het geheugen gezet; die zijn gewoon zoals ze zijn. Maar sommige
@@ -148,7 +148,7 @@ kent vanuit Python. Let op: je kunt beter `Serial.println()` gebruiken, waarbij
 de `ln` voor *line new* staat, wat betekent dat alles automatisch op de volgende
 regel komt. Zonder `ln` komt alles achter elkaar staan zonder spatie of enter.
 
-### void loop() {}
+### void loop()
 
 De Arduino is een computertje dat de hele tijd iets herhaalt, zoals bijvoorbeeld
 het meten van de temperatuur, of weergeven van de tijd, of knipperen van lampjes.
@@ -238,3 +238,22 @@ kunt kiezen voor een getal tussen 0 en 1024, en je dus veel beter kan kiezen
 hoeveel stroom er naar het lampje gaat.
 
 ---
+
+## Overzicht: operators
+
+| Type   | Beschrijving                           | Voorbeeld                             |
+|:-------|:---------------------------------------|:--------------------------------------|
+|=       |Nieuwe waarde toewijzen                 |`int a = 4;                           `|
+|==      |Waarde vergelijken                      |`a == 5;                // false      `|
+|+       |Optellen                                |`int b = a + 4;         // b is 8     `|
+|-       |Aftrekken                               |`int c = b – 1;         // c is 7     `|
+|/       |Delen                                   |`int d = c / 0.5;       // d is 14    `|
+|*       |Vermenigvuldigen                        |`int e = d * 3;         // e is 42    `|
+|%       |Rest van een breuk bepalen              |`int rest = e % 20;     // rest is 2  `|
+|pow(a,b)|Machtverheffen: a^b                     |`int macht = pow(c, 2); // 7^2 is 49  `|
+|sqrt(a) |Worteltrekken (tweedemachts)            |`int wortel = sqrt(a);  // wortel is 2`|
+|>, >=   |Groter dan, groter of gelijk aan        |`bool x != true;        // x is false `|
+|<, <=   |Kleiner dan, kleiner of gelijk aan      |`if (c >= 0)                          `|
+|! (not) |Tegenovergestelde maken                 |`if (d < 0)                           `|
+|&& (and)|Beide zijn waar                         |`if (a > 0 && b < 5)                  `|
+|&#124;&#124; (or) |Minstens een van beide is waar|<code>if (a > 0 &#124;&#124; b < 5)</code>|
