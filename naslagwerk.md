@@ -13,6 +13,8 @@
     * [Een compleet script](#een-compleet-script)
 * [Een knipperend lampje](#een-knipperend-lampje)
 * [Overzicht: operators](#overzicht-operators)
+* [Overzicht: datatypen](#overzicht-datatypen)
+* [Overzicht: controlestructuren](#overzicht-controlestructuren)
 ---
 
 Arduino is hét startersplatform om met elektronica aan de gang te gaan. Het is
@@ -257,3 +259,100 @@ hoeveel stroom er naar het lampje gaat.
 |! (not) |Tegenovergestelde maken                 |`if (d < 0)                           `|
 |&& (and)|Beide zijn waar                         |`if (a > 0 && b < 5)                  `|
 |&#124;&#124; (or) |Minstens een van beide is waar|<code>if (a > 0 &#124;&#124; b < 5)</code>|
+   
+---
+
+## Overzicht: datatypen
+
+| Type             | Beschrijving       | Voorbeeld                         | Waarde                          |
+|:-----------------|:-------------------|:----------------------------------|:--------------------------------|
+|bool              |`true` of `false`   |`bool open = true;`                |0 of 1 (false/true)              |
+|char              |Eén letter of cijfer|`char letter = 'W';`               |-128 tot 127                     |
+|unsigned char     |Eén letter of cijfer|`unsigned char letter2 = 'w';`     |0 tot 255                        |
+|String            |Een keten van *char*|`String tekst = 'Hallo';`          |tot 2048 *char*s                 |
+|int               |Een geheel getal    |`int score = -8;`                  |-32.768 tot 32.767               |
+|unsigned int      |Een geheel getal    |`unsigned int teller = 5;`         |0 tot 65.535                     |
+|long              |Een geheel getal    |`long miljoen = 1000000;`          |-2.147.483.648 tot 2.147.483.647 |
+|unsigned long     |Een geheel getal    |`unsigned long miljard = 2e9;`     |0 tot 4.294.967.295              |
+|float/double      |Een kommagetal      |`float pi = 3.14; // bijna`        |7 significante cijfers (ongeveer)|
+|array (impliciet!)|Een keten van ...   |`int lijst[4] = { -5, 3, 1, 100 };`|n.a.                             |
+   
+---
+   
+## Overzicht: controlestructuren   
+
+Er zijn drie veelgebruikte structuren: de if/else, for, en while statements.
+De eerste is een eenmalige handeling, de tweede een gecontroleerde
+herhalende, en de laatste een ongecontroleerde herhalende. Dat betekent dat 
+de whileloop zich tot in der eeuwigheid zou kunnen herhalen.
+   
+- Een if-statement checkt een voorwaarde, en verricht een handeling op 
+   basis van de uitkomst.
+   *Structuur:*
+   ```cpp
+   if (condition) {
+       // do something
+   }
+   (optioneel:)
+   else if (condition){
+       // do something else
+   }
+   (optioneel:)
+   else {
+       // do something else
+   }
+   ```
+   *Voorbeeld:*
+   ```cpp
+   if (x >= 0) {
+       int y = pow(x, 0.5);
+   }
+   else {
+       continue; // we doen niets, want
+                 // wortel < 0 bestaat niet
+   }
+   ```
+- Een while-statement (of while-loop) checkt een voorwaarde, en verricht
+   de handeling zolang de uitkomst juist is. Hoe vaak dit gebeurt, is lang
+   niet altijd duidelijk. Het zou zomaar eindeloos kunnen gebeuren. Daarom
+   moet je altijd opletten met een while-loop.
+   *Structuur:*
+   ```cpp
+   while(true) {
+       // do something
+   }
+   ```
+   *Voorbeeld:*
+   ```cpp
+   int i = 10;
+   while (i > 0) { // we voeren dit uit tot ‘i’ niet meer groter is dan 0
+       i = i – 1; // elke keer verlagen we ‘i’ één keer
+   }
+   ```
+- Een for-statement (of for-loop) verricht een behandeling een 
+   gespecificeerd aantal keren. Als je deze kunt gebruiken in plaats van
+   een while-loop, is dat eigenlijk altijd beter om te doen.
+   *Structuur:*
+   ```cpp
+   for (start; stop; step) {
+       // do something
+   }
+   ```
+   *Voorbeeld:*
+   ```cpp
+   for (int i = 0; i < 10; i++) {
+       // do something
+   }
+   ```
+
+Naast deze 3 logische (logica) structuren, zijn er ook nog twee manieren om
+het gedrag van herhalende loops (de algemene loop(), for() en while()) te
+beheersen. Dat zijn:
+                          
+a. <kbd>break</kbd>
+Hiermee breek je per direct vrij uit een herhalende loop en ga je door naar 
+de volgende regel onder de loop.
+
+b. <kbd>continue</kbd>
+Hiermee sla je een ronde in een herhalende loop over en ga je door naar de
+volgende herhaling van deze loop.
