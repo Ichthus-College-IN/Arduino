@@ -105,11 +105,11 @@ hebben. Een object maken van het LCD gaat als volgt:
 LiquidCrystal_I2C lcd(0x27,16,2);     // een LCD van 16 * 2 karakters
 ```
 
-De naam `lcd` is hier de naam van het object, van het type `LiquidCrystal_I2C`.
-`0x27` is het adres dat nodig is voor de Arduino om ermee te communiceren, en
-`16` en `2` zijn het aantal kolommen en rijen van het display. We zien hier ook
-hoe je comments maakt in C++: met twee slashes `//` (in tegenstelling tot de `#`
-in Python).
+De naam `lcd` is hier de naam van het object, van het type <kbd>LiquidCrystal_I2C</kbd>.
+</kbd>0x27</kbd> is het adres dat nodig is voor de Arduino om ermee te communiceren,
+en <kbd>16</kbd> en <kbd>2</kbd> zijn het aantal kolommen en rijen van het display.
+We zien hier ook hoe je comments maakt in C++: met twee slashes `//` (in tegenstelling
+tot de `#` in Python).
 
 ### void setup()
 
@@ -173,8 +173,8 @@ void loop() {
 Hier komen een aantal dingen aan bod. Het eerste is een nieuwe variabele: deze
 geven we de waarde van het aantal milliseconden sinds het opstarten van de Arduino.
 Aangezien dat een groot getal kan worden na een paar uren of dagen geven we die
-het type `long` (standaard gebruik). Vervolgens printen we een stukje tekst en
-de tijd in seconden op de seriële monitor. Daarna zetten we de tekst ook op het
+het type <kbd>long</kbd> (standaard gebruik). Vervolgens printen we een stukje tekst
+en de tijd in seconden op de seriële monitor. Daarna zetten we de tekst ook op het
 LCD, al moeten we eerst de bestaande tekst weggooien; het LCD is niet zo slim dat
 hij het zelf doet. Je moet hier echt alles 'zelf doen'.
 
@@ -234,30 +234,30 @@ Arduino kan niet tegelijkertijd als input en output dienen, dus moet in de
 setup aangegeven worden dat hier een output gebruikt wordt: er moet stroom
 naar het lampje toe. Als je bijvoorbeeld een drukknop gebruikt, wil je meten
 wat er binnenkomt, en zul je <kbd>INPUT</kbd> gebruiken in plaats van
-<kbd>OUTPUT</kbd>. `digitalWrite` is een manier om *wel* of *geen* stroom
-naar het lampje te sturen, in tegenstelling tot `analogWrite`, waarmee je
-kunt kiezen voor een getal tussen 0 en 1024, en je dus veel beter kan kiezen
-hoeveel stroom er naar het lampje gaat.
+<kbd>OUTPUT</kbd>. <kbd>digitalWrite</kbd> is een manier om *wel* of *geen*
+stroom naar het lampje te sturen, in tegenstelling tot <kbd>analogWrite</kbd>,
+waarmee je kunt kiezen voor een getal tussen 0 en 1024, en je dus veel meer
+controle hebt over hoeveel stroom er precies naar het lampje gaat.
 
 ---
 
 ## Overzicht: operators
 
-| Type   | Beschrijving                           | Voorbeeld                             |
-|:-------|:---------------------------------------|:--------------------------------------|
-|=       |Nieuwe waarde toewijzen                 |`int a = 4;                           `|
-|==      |Waarde vergelijken                      |`a == 5;                // false      `|
-|+       |Optellen                                |`int b = a + 4;         // b is 8     `|
-|-       |Aftrekken                               |`int c = b – 1;         // c is 7     `|
-|/       |Delen                                   |`int d = c / 0.5;       // d is 14    `|
-|*       |Vermenigvuldigen                        |`int e = d * 3;         // e is 42    `|
-|%       |Rest van een breuk bepalen              |`int rest = e % 20;     // rest is 2  `|
-|pow(a,b)|Machtverheffen: a^b                     |`int macht = pow(c, 2); // 7^2 is 49  `|
-|sqrt(a) |Worteltrekken (tweedemachts)            |`int wortel = sqrt(a);  // wortel is 2`|
-|>, >=   |Groter dan, groter of gelijk aan        |`bool x != true;        // x is false `|
-|<, <=   |Kleiner dan, kleiner of gelijk aan      |`if (c >= 0)                          `|
-|! (not) |Tegenovergestelde maken                 |`if (d < 0)                           `|
-|&& (and)|Beide zijn waar                         |`if (a > 0 && b < 5)                  `|
+| Type   | Beschrijving                           | Voorbeeld                                |
+|:-------|:---------------------------------------|:-----------------------------------------|
+|=       |Nieuwe waarde toewijzen                 |`int a = 4;                              `|
+|==      |Waarde vergelijken                      |`a == 5;                // false         `|
+|+       |Optellen                                |`int b = a + 4;         // b is 8        `|
+|-       |Aftrekken                               |`int c = b – 1;         // c is 7        `|
+|/       |Delen                                   |`int d = c / 0.5;       // d is 14       `|
+|*       |Vermenigvuldigen                        |`int e = d * 3;         // e is 42       `|
+|%       |Rest van een breuk bepalen              |`int rest = e % 20;     // rest is 2     `|
+|pow(a,b)|Machtverheffen: a^b                     |`int macht = pow(c, 2); // 7^2 is 49     `|
+|sqrt(a) |Worteltrekken                           |`int wortel = sqrt(a);  // wortel(4) = 2 `|
+|>, >=   |Groter dan, groter of gelijk aan        |`bool x != true;        // x is false    `|
+|<, <=   |Kleiner dan, kleiner of gelijk aan      |`if (c >= 0)                             `|
+|! (not) |Tegenovergestelde maken                 |`if (d < 0)                              `|
+|&& (and)|Beide zijn waar                         |`if (a > 0 && b < 5)                     `|
 |&#124;&#124; (or) |Minstens een van beide is waar|<code>if (a > 0 &#124;&#124; b < 5)</code>|
    
 ---
@@ -281,13 +281,15 @@ hoeveel stroom er naar het lampje gaat.
    
 ## Overzicht: controlestructuren   
 
-Er zijn drie veelgebruikte structuren: de if/else, for, en while statements.
-De eerste is een eenmalige handeling, de tweede een gecontroleerde
-herhalende, en de laatste een ongecontroleerde herhalende. Dat betekent dat 
+Er zijn drie veelgebruikte structuren: de <kbd>if/else</kbd>, 
+<kbd>while</kbd>, en <kbd>for</kbd> statements.
+De eerste is een eenmalige handeling, de tweede een ongecontroleerde
+herhalende, en de laatste een gecontroleerde herhalende. Dat betekent dat 
 de whileloop zich tot in der eeuwigheid zou kunnen herhalen.
-   
+
 - Een if-statement checkt een voorwaarde, en verricht een handeling op 
    basis van de uitkomst.
+   
    *Structuur:*
    ```cpp
    if (condition) {
@@ -304,18 +306,18 @@ de whileloop zich tot in der eeuwigheid zou kunnen herhalen.
    ```
    *Voorbeeld:*
    ```cpp
-   if (x >= 0) {
-       int y = pow(x, 0.5);
+   if (x > 0) {
+       int y = sqrt(x);
    }
    else {
-       continue; // we doen niets, want
-                 // wortel < 0 bestaat niet
+       continue; // we doen niets, want wortel < 0 bestaat niet
    }
    ```
 - Een while-statement (of while-loop) checkt een voorwaarde, en verricht
    de handeling zolang de uitkomst juist is. Hoe vaak dit gebeurt, is lang
    niet altijd duidelijk. Het zou zomaar eindeloos kunnen gebeuren. Daarom
    moet je altijd opletten met een while-loop.
+                              
    *Structuur:*
    ```cpp
    while(true) {
@@ -324,14 +326,18 @@ de whileloop zich tot in der eeuwigheid zou kunnen herhalen.
    ```
    *Voorbeeld:*
    ```cpp
-   int i = 10;
-   while (i > 0) { // we voeren dit uit tot ‘i’ niet meer groter is dan 0
-       i = i – 1; // elke keer verlagen we ‘i’ één keer
+   int i = 0;
+   while (i < 10) { // we voeren dit uit tot ‘i’ niet meer kleiner is dan 10
+       Serial.println(i);
+       i = i + 1;  // elke keer verhogen we ‘i’ één keer
    }
    ```
 - Een for-statement (of for-loop) verricht een behandeling een 
-   gespecificeerd aantal keren. Als je deze kunt gebruiken in plaats van
-   een while-loop, is dat eigenlijk altijd beter om te doen.
+   gespecificeerd aantal keren. Daarbij wordt een variabele gebruikt
+   tussen een start- en stop-waarde die telkens met een grootte *step*
+   toeneemt. Zie onderstaand voorbeeld waar precies hetzelfde wordt
+   gedaan als in bovenstaande while-loop.
+   
    *Structuur:*
    ```cpp
    for (start; stop; step) {
@@ -341,9 +347,15 @@ de whileloop zich tot in der eeuwigheid zou kunnen herhalen.
    *Voorbeeld:*
    ```cpp
    for (int i = 0; i < 10; i++) {
-       // do something
+       Serial.println(i);
    }
    ```
+                          
+Merk op dat <kbd>while</kbd> en <kbd>for</kbd> vaak uitwisselbaar zijn
+(je kunt elke for-loop veranderen in een while-loop, al is het omgekeerde
+niet waar). Maar een for-loop is altijd duidelijker en veiliger en heeft
+dan ook zeker de voorkeur. Gebruik een while-loop alleen als het echt
+niet anders kan.
 
 Naast deze 3 logische (logica) structuren, zijn er ook nog twee manieren om
 het gedrag van herhalende loops (de algemene loop(), for() en while()) te
